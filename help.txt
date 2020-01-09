@@ -1,0 +1,2 @@
+https://github.com/alejandroautalan/pygubu
+            pip install pygubu

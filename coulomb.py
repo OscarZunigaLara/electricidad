@@ -3,22 +3,39 @@ KKK = 9000000000
 
 class carga:
     "CLASE CARGA"
-    def __init__(self, X, Y, Z, carga):
-        self.x = X
-        self.y = Y
-        self.z = Z
+    def __init__(self):
         self.carga = carga
-    def toString (self):
-        return [self.x, self.y, self.z, self.carga]
+        self.x=0
+        self.y=0
+        self.z=0
+        self.carga=0
+
 
     def getX(self):
         return self.x
+
+    def setx(self, X):
+        self.x = X
+
     def getY(self):
         return self.y
+
+    def sety(self, Y):
+        self.y = Y
+
     def getZ(self):
         return self.z
+
+    def setz(self, Z):
+        self.z = Z
     def getCarga(self):
         return self.carga
+
+    def setCarga(self, cargaAgregar):
+        self.carga=cargaAgregar
+
+    def toString(self):
+        return [self.x, self.y, self.z, self.carga]
 
     def calcularFuerzaSobre(self, cargaACalcular):
         print("CALCULANDO EFECTO DE: ")
@@ -37,13 +54,29 @@ class carga:
 
         print(Fuerza)
 
-if __name__ == '__main__':
-    print("COULOMB")
-    carga1 = carga(5, 5,5,10)
+
+def Testing():
+    carga1 = carga()
+    carga1.setx(0)
+    carga1.sety(0)
+    carga1.setz(0)
+    carga1.setCarga(.000001)
     print(carga1.toString())
 
-    carga2 = carga(0,0,0,20)
+    carga2 = carga()
+    carga2.setx(1)
+    carga2.sety(1)
+    carga2.setz(2)
+    carga2.setCarga(.000002)
     print(carga2.toString())
 
     carga1.calcularFuerzaSobre(carga2)
+
+
+
+
+
+if __name__ == '__main__':
+    print("COULOMB")
+    Testing()
 
