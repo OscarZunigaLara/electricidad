@@ -25,8 +25,8 @@ class allCharges:
                     x =  x + carga1.calcularFuerzaX(carga2)
                     y = y + carga1.calcularFuerzaY(carga2)
 
-                    print("X:   " , x)
-                    print("Y    " , y)
+                print("X:   " , x)
+                print("Y    " , y)
 
 class carga:
     "CLASE CARGA"
@@ -86,7 +86,7 @@ class carga:
         distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
         # print(distancia)
 
-        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia**2 * cy/distancia
+        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia**2 * cx/distancia
 
         return Fuerza
 
