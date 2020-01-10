@@ -82,10 +82,14 @@ class carga:
         cy = self.y - cargaACalcular.getY()
         cz = self.z - cargaACalcular.getZ()
 
+        cx = abs(cx)
+        cy = abs(cy)
+        cz = abs(cz)
+
         distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
         # print(distancia)
 
-        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia
+        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia**2 * cy/distancia
 
         return Fuerza
 
@@ -97,7 +101,11 @@ class carga:
         distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
         # print(distancia)
 
-        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia
+        cx = abs(cx)
+        cy = abs(cy)
+        cz = abs(cz)
+
+        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia**2 * cy/distancia
 
         return Fuerza
     def calcularFuerzaZ(self, cargaACalcular):
@@ -157,9 +165,7 @@ def Testing2():
 
 
 
-if __name__ == '__main__':
-    allCharges1 = allCharges()
-
+def cargasPrueba():
 
 
     carga1 = carga()
@@ -178,6 +184,9 @@ if __name__ == '__main__':
     allCharges1.addCharges(carga2)
 
 
+
+if __name__ == '__main__':
+    allCharges1 = allCharges()
 
 
 
