@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <interface>
-  <object class="tk.Frame" id="Frame_2">
+  <object class="tk.Frame" id="GUI">
     <property name="height">200</property>
     <property name="width">200</property>
     <layout>
@@ -9,14 +9,75 @@
       <property name="row">0</property>
     </layout>
     <child>
-      <object class="tk.Text" id="Text_2">
-        <property name="height">10</property>
-        <property name="text" translatable="yes">Text_2</property>
-        <property name="width">50</property>
+      <object class="tk.Label" id="coulomb">
+        <property name="text" translatable="yes">COULOMB
+</property>
         <layout>
           <property name="column">0</property>
           <property name="propagate">True</property>
           <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="CARGA">
+        <property name="cursor">arrow</property>
+        <property name="font">TkDefaultFont</property>
+        <property name="justify">left</property>
+        <property name="relief">flat</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">CARGA</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="X">
+        <property name="text" translatable="yes">X</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="Y">
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Y
+</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Entry" id="Z">
+        <property name="text" translatable="yes">Z</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="AGREGAR">
+        <property name="anchor">n</property>
+        <property name="cursor">arrow</property>
+        <property name="default">disabled</property>
+        <property name="font">TkDefaultFont</property>
+        <property name="justify">left</property>
+        <property name="text" translatable="yes">AGREGAR</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
         </layout>
       </object>
     </child>

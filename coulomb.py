@@ -1,14 +1,29 @@
 KKK = 9000000000
 
 class allCharges:
+
     def __init__(self):
         self.charges = []
 
-    def addCharges(self):
-        cargaAgregar = carga()
+    def addCharges(self, cargaAgregar):
 
         self.charges.append(cargaAgregar)
-    
+
+    def calcularTodo(self):
+        for i in self.charges:
+            carga1 = i
+            for ii in self.charges:
+                carga2 = ii
+                if carga1 == carga2:
+                    pass
+                else:
+                    print("CALCULANDO FUERZA SOBRE :")
+                    print(carga1.toString())
+                    print("------------------------------")
+                    carga1.calcularFuerzaSobre(carga2)
+
+
+
 class carga:
     "CLASE CARGA"
     def __init__(self):
@@ -46,17 +61,13 @@ class carga:
         return [self.x, self.y, self.z, self.carga]
 
     def calcularFuerzaSobre(self, cargaACalcular):
-        print("CALCULANDO EFECTO DE: ")
-        print(self.toString())
-        print("SOBRE")
-        print(cargaACalcular.toString())
 
         cx = self.x - cargaACalcular.getX()
         cy = self.y - cargaACalcular.getY()
         cz = self.z - cargaACalcular.getZ()
 
         distancia = (cx **2 + cy **2 + cz **2) ** .5
-        print(distancia)
+        #print(distancia)
 
         Fuerza = KKK * (self.carga * cargaACalcular.getCarga())/distancia
 
@@ -64,6 +75,31 @@ class carga:
 
 
 def Testing():
+    allCharges1 = allCharges()
+
+
+
+    carga1 = carga()
+    carga1.setx(0)
+    carga1.sety(0)
+    carga1.setz(0)
+    carga1.setCarga(.000001)
+
+    allCharges1.addCharges(carga1)
+
+
+    carga2 = carga()
+    carga2.setx(1)
+    carga2.sety(1)
+    carga2.setz(2)
+    carga2.setCarga(.000002)
+
+    allCharges1.addCharges(carga2)
+
+
+    allCharges1.calcularTodo()
+
+def Testing2():
     carga1 = carga()
     carga1.setx(0)
     carga1.sety(0)
@@ -82,9 +118,73 @@ def Testing():
 
 
 
-
-
 if __name__ == '__main__':
-    print("COULOMB")
-    Testing()
+    allCharges1 = allCharges()
 
+
+
+    carga1 = carga()
+    carga1.setx(0)
+    carga1.sety(0)
+    carga1.setz(0)
+    carga1.setCarga(.000001)
+
+    allCharges1.addCharges(carga1)
+
+
+    carga2 = carga()
+    carga2.setx(1)
+    carga2.sety(1)
+    carga2.setz(2)
+    carga2.setCarga(.000002)
+
+    allCharges1.addCharges(carga2)
+
+
+
+
+
+    print("COULOMB")
+    #Testing()
+
+    inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+                          "Please enter the desired interaction on the menu:\n"
+                          "1. Agregar Carga.\n"
+                          ))
+    while(inputMenu != 0):
+
+        if inputMenu == 1:
+            c = float(input("VALOR DE LA CARGA"))
+            EXPONENTE = int(input("EXPONENTE"))
+            c = c * 10 **EXPONENTE
+            print(c)
+            x = float(input("INGRESE CORDENADA X    "))
+            y = float(input("INGRESE CORDENADA Y    "))
+            z = float(input("INGRESE CORDENADA Z    "))
+            carga1 = carga()
+
+            carga1.setCarga(c)
+            carga1.setx(x)
+            carga1.sety(y)
+            carga1.setz(z)
+
+            print(carga1.toString())
+            allCharges1.addCharges(carga1)
+            inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+                                  "Please enter the desired interaction on the menu:\n"
+                                  "1. Agregar Carga.\n"
+                                  ))
+        elif inputMenu == 2:
+            allCharges1.calcularTodo()
+            inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+                                  "Please enter the desired interaction on the menu:\n"
+                                  "1. Agregar Carga.\n"
+                                  ))
+
+        else:
+            print("ERROR!!!! Please enter a valid value.")
+            print("---------------------------------------------------")
+            inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+                                  "Please enter the desired interaction on the menu:\n"
+                                  "1. Agregar Carga.\n"
+                                  ))
