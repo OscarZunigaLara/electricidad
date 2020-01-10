@@ -12,6 +12,8 @@ class allCharges:
     def calcularTodo(self):
         for i in self.charges:
             carga1 = i
+            x = 0
+            y = 0
             for ii in self.charges:
                 carga2 = ii
                 if carga1 == carga2:
@@ -20,9 +22,11 @@ class allCharges:
                     print("CALCULANDO FUERZA SOBRE :")
                     print(carga1.toString())
                     print("------------------------------")
-                    carga1.calcularFuerzaSobre(carga2)
+                    x =  x + carga1.calcularFuerzaX(carga2)
+                    y = y + carga1.calcularFuerzaY(carga2)
 
-
+                    print("X:   " , x)
+                    print("Y    " , y)
 
 class carga:
     "CLASE CARGA"
@@ -58,7 +62,7 @@ class carga:
         self.carga=cargaAgregar
 
     def toString(self):
-        return [self.x, self.y, self.z, self.carga]
+        return [self.x, self.y, self.carga]
 
     def calcularFuerzaSobre(self, cargaACalcular):
 
@@ -70,6 +74,41 @@ class carga:
         #print(distancia)
 
         Fuerza = KKK * (self.carga * cargaACalcular.getCarga())/distancia
+
+        print(Fuerza)
+
+    def calcularFuerzaX(self, cargaACalcular):
+        cx = self.x - cargaACalcular.getX()
+        cy = self.y - cargaACalcular.getY()
+        cz = self.z - cargaACalcular.getZ()
+
+        distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
+        # print(distancia)
+
+        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia
+
+        return Fuerza
+
+    def calcularFuerzaY(self, cargaACalcular):
+        cx = self.x - cargaACalcular.getX()
+        cy = self.y - cargaACalcular.getY()
+        cz = self.z - cargaACalcular.getZ()
+
+        distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
+        # print(distancia)
+
+        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia
+
+        return Fuerza
+    def calcularFuerzaZ(self, cargaACalcular):
+        cx = self.x - cargaACalcular.getX()
+        cy = self.y - cargaACalcular.getY()
+        cz = self.z - cargaACalcular.getZ()
+
+        distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
+        # print(distancia)
+
+        Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia
 
         print(Fuerza)
 
@@ -126,7 +165,6 @@ if __name__ == '__main__':
     carga1 = carga()
     carga1.setx(0)
     carga1.sety(0)
-    carga1.setz(0)
     carga1.setCarga(.000001)
 
     allCharges1.addCharges(carga1)
@@ -135,7 +173,6 @@ if __name__ == '__main__':
     carga2 = carga()
     carga2.setx(1)
     carga2.sety(1)
-    carga2.setz(2)
     carga2.setCarga(.000002)
 
     allCharges1.addCharges(carga2)
@@ -160,13 +197,13 @@ if __name__ == '__main__':
             print(c)
             x = float(input("INGRESE CORDENADA X    "))
             y = float(input("INGRESE CORDENADA Y    "))
-            z = float(input("INGRESE CORDENADA Z    "))
+            #z = float(input("INGRESE CORDENADA Z    "))
             carga1 = carga()
 
             carga1.setCarga(c)
             carga1.setx(x)
             carga1.sety(y)
-            carga1.setz(z)
+            #carga1.setz(z)
 
             print(carga1.toString())
             allCharges1.addCharges(carga1)
