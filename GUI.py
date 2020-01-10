@@ -7,7 +7,7 @@ class Application():
     def __init__(self, master):
         self.builder = builder = pygubu.Builder()
         builder.add_from_file('OWO.ui')
-        self.mainwindow = builder.get_object('PRINCIPAL', master)
+        self.mainwindow = builder.get_object('GUI', master)
 
 if __name__ == '__main__':
     root = tk.Tk()

@@ -1,6 +1,14 @@
 KKK = 9000000000
 
+class allCharges:
+    def __init__(self):
+        self.charges = []
 
+    def addCharges(self):
+        cargaAgregar = carga()
+
+        self.charges.append(cargaAgregar)
+    
 class carga:
     "CLASE CARGA"
     def __init__(self):
