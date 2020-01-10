@@ -82,9 +82,6 @@ class carga:
         cy = self.y - cargaACalcular.getY()
         cz = self.z - cargaACalcular.getZ()
 
-        cx = abs(cx)
-        cy = abs(cy)
-        cz = abs(cz)
 
         distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
         # print(distancia)
@@ -101,9 +98,6 @@ class carga:
         distancia = (cx ** 2 + cy ** 2 + cz ** 2) ** .5
         # print(distancia)
 
-        cx = abs(cx)
-        cy = abs(cy)
-        cz = abs(cz)
 
         Fuerza = KKK * (self.carga * cargaACalcular.getCarga()) / distancia**2 * cy/distancia
 
