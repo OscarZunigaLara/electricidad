@@ -184,9 +184,10 @@ if __name__ == '__main__':
     print("COULOMB")
     #Testing()
 
-    inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+    inputMenu = int(input("[COULMB.\n"
                           "Please enter the desired interaction on the menu:\n"
-                          "1. Agregar Carga.\n"
+                          "1. Agregar Carga.\n"+
+                          "2. calcular todo"
                           ))
     while(inputMenu != 0):
 
@@ -207,21 +208,23 @@ if __name__ == '__main__':
 
             print(carga1.toString())
             allCharges1.addCharges(carga1)
-            inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+            inputMenu = int(input("[COULMB.\n"
                                   "Please enter the desired interaction on the menu:\n"
-                                  "1. Agregar Carga.\n"
+                                  "1. Agregar Carga.\n" +
+                                  "2. calcular todo"
                                   ))
         elif inputMenu == 2:
             allCharges1.calcularTodo()
-            inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+            inputMenu = int(input("[COULMB.\n"
                                   "Please enter the desired interaction on the menu:\n"
-                                  "1. Agregar Carga.\n"
+                                  "1. Agregar Carga.\n" +
+                                  "2. calcular todo"
                                   ))
-
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
-            inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
+            inputMenu = int(input("[COULMB.\n"
                                   "Please enter the desired interaction on the menu:\n"
-                                  "1. Agregar Carga.\n"
+                                  "1. Agregar Carga.\n" +
+                                  "2. calcular todo"
                                   ))
